@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
+using System.Runtime.InteropServices.ComTypes;
+using Microsoft.Extensions.Configuration;
 
 namespace DataAccess
 {
@@ -12,11 +12,12 @@ namespace DataAccess
         {
             _configuration = configuration;
         }
+
         public int GetTotalNumberOfUsers()
         {
             using var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
 
-            var sqlCommand = new SqlCommand("SELECT COUNT(UserId) FROM [User] WTIH (nolock)", connection);
+            var sqlCommand = new SqlCommand("SELECT COUNT(UserId) FROM [User] WITH (nolock)", connection);
             sqlCommand.Connection.Open();
             var noOfUsers = (int)sqlCommand.ExecuteScalar();
 
@@ -26,13 +27,12 @@ namespace DataAccess
         public int GetTotalNumberOfScans()
         {
             using var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
-
-            var sqlCommand = new SqlCommand("SELECT SUM(NumberOfScans) FROM [User] WTIH (nolock)", connection);
+            
+            var sqlCommand = new SqlCommand("SELECT SUM(NumberOfScans) FROM [User] WITH (nolock)", connection);
             sqlCommand.Connection.Open();
             var noOfScans = (int)sqlCommand.ExecuteScalar();
 
             return noOfScans;
         }
-
     }
 }

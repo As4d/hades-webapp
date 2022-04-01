@@ -1,10 +1,10 @@
-﻿using DataAccess;
-using HadesWebAppDemo.Models;
+﻿using HadesProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
+using DataAccess;
 
-namespace HadesWebAppDemo.Controllers
+namespace HadesProject.Controllers
 {
     public class HomeController : Controller
     {
@@ -22,7 +22,7 @@ namespace HadesWebAppDemo.Controllers
             return View(new UserModel
             {
                 NoOfUsers = _repository.GetTotalNumberOfUsers(),
-                NoOfScans = _repository.GetTotalNumberOfScans()
+                NoOfScans =  _repository.GetTotalNumberOfScans()
             });
         }
 

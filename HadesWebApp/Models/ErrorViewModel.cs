@@ -1,6 +1,6 @@
 using System;
 
-namespace HadesWebAppDemo.Models
+namespace HadesProject.Models
 {
     public class ErrorViewModel
     {
