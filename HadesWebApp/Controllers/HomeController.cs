@@ -1,6 +1,5 @@
 ﻿using HadesProject.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using DataAccess;
 
@@ -8,12 +7,10 @@ namespace HadesProject.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly IRepository _repository;
 
-        public HomeController(ILogger<HomeController> logger, IRepository repository)
+        public HomeController(IRepository repository)
         {
-            _logger = logger;
             _repository = repository;
         }
 
@@ -24,11 +21,6 @@ namespace HadesProject.Controllers
                 NoOfUsers = _repository.GetTotalNumberOfUsers(),
                 NoOfScans =  _repository.GetTotalNumberOfScans()
             });
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

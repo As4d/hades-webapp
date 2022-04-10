@@ -1,43 +1,73 @@
 ﻿@model UserModel
 
-<header class="pb-3 mb-4 border-bottom">
-    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-        <img src="images/logos/hades60x60.png"/>
-        <span class="fs-4">Hades</span>
-    </a>
-</header>
-
-<div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">Hades</h1>
-        <p class="col-md-8 fs-4">This application highlights possible exploits and vulnerabilities in Windows 10. It also locates files on your system that could be a possibles security risk, for example files containing sensitive data or passwords.</p>
-    </div>
-</div>
-
-<div class="row align-items-md-stretch">
-    <div class="col-md-6">
-        <div class="h-100 p-5 text-white bg-dark rounded-3">
-            <h2>Secure your every bit</h2>
-            <p>Download Hades now!</p>
-            <a href="~/downloads/test.zip" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Download</a>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="h-100 p-5 bg-light border rounded-3">
-            <h2>Hades in the wild</h2>
-            
-            <table class="table table-striped">
-                <tbody>
-                    <tr>
-                        <td>No. of customers</td>
-                        <td>@Model.NoOfUsers</td>
-                    </tr>
-                <tr>
-                    <td>No. of scans</td>
-                    <td>@Model.NoOfScans</td>
-                </tr>
-                </tbody>
-            </table>
+<div id="portfolio">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="/assets/img/portfolio/fullsize/7.jpg" title="Project Name">
+                    <img class="img-fluid" src="/assests/img/portfolio/thumbnails/7.jpg" alt="..." />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">Quick scan</div>
+                        <div class="project-name">Find vulnerable file names</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="/assests/img/portfolio/fullsize/8.jpg" title="Project Name">
+                    <img class="img-fluid" src="/assests/img/portfolio/thumbnails/8.jpg" alt="..." />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">Discourage cyber thiefs</div>
+                        <div class="project-name">Don't give them an excuse</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="/assests/img/portfolio/fullsize/9.jpg" title="Project Name">
+                    <img class="img-fluid" src="/assests/img/portfolio/thumbnails/9.jpg" alt="..." />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">Protect yourself</div>
+                        <div class="project-name">Better safe than sorry</div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>
+<!-- Services-->
+<section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0" id="about">Hades At Your Service</h2>
+        <hr class="divider" />
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                    <h3 class="h4 mb-2">Ready to Go</h3>
+                    <p class="text-muted mb-0">Download Hades and you are ready to go!</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                    <h3 class="h4 mb-2">No. of customers</h3>
+                    <p class="text-muted mb-0" style="font-size:30px">@Model.NoOfUsers</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                    <h3 class="h4 mb-2">No. of scans to date</h3>
+                    <p class="text-muted mb-0" style="font-size:30px">@Model.NoOfScans</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+                    <h3 class="h4 mb-2">Security is paramount</h3>
+                    <p class="text-muted mb-0">Keep sensitive data away from prying eyes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
